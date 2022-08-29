@@ -1,10 +1,8 @@
-import Ancients from '../assets/Ancients/index'
-
 const ancientsData = [
   {
     id: 'azathoth',
     name: 'azathoth',
-    cardFace: Ancients.azathoth,
+    cardFace: '../assets/Ancients/Azathoth.png',
     firstStage: {
       greenCards: 1,
       blueCards: 1,
@@ -24,7 +22,7 @@ const ancientsData = [
   {
     id: 'cthulhu',
     name: 'cthulhu',
-    cardFace: Ancients.cthulhu,
+    cardFace: '../assets/Ancients/Cthulthu.png',
     firstStage: {
       greenCards: 0,
       blueCards: 2,
@@ -44,7 +42,7 @@ const ancientsData = [
   {
     id: 'iogSothoth',
     name: 'iogSothoth',
-    cardFace: Ancients.iogSothoth,
+    cardFace: '../assets/Ancients/IogSothoth.png',
     firstStage: {
       greenCards: 0,
       blueCards: 1,
@@ -64,7 +62,7 @@ const ancientsData = [
   {
     id: 'shubNiggurath',
     name: 'shubNiggurath',
-    cardFace: Ancients.shubNiggurath,
+    cardFace: '../assets/Ancients/ShubNiggurath.png',
     firstStage: {
       greenCards: 1,
       blueCards: 1,
@@ -82,5 +80,24 @@ const ancientsData = [
     },
   },
 ]
+
+const ancientsCard = document.querySelectorAll('.ancients_card');
+
+
+export function getCardsSum(user, colorCard) {
+  return user.firstStage[colorCard] + user.secondStage[colorCard] + user.thirdStage[colorCard];
+}
+
+export function openDifficulties() {
+  const difficulties = document.querySelector('.difficulty_container');
+  difficulties.classList.remove('hidden')
+}
+
+export function chooseAncient() {
+  for (let i = 0; i < ancientsCard.length; i++) {
+    const btn = ancientsCard[i];
+    btn.addEventListener('click', openDifficulties)
+  }
+}
 
 export default ancientsData
