@@ -1,4 +1,4 @@
-import {getGreenNum} from '../../../data/ancients.js'
+import {getCardsSum} from '../../../data/ancients.js'
 const greenCards = [
   {
     src: '../assets/MythicCards/green/green1.png',
@@ -73,19 +73,18 @@ const greenCards = [
     id: 'normal'
   },
 ];
-let newGreenCards = [];
-let max = greenCards.length;
+
 function getRandomInt() {
-  return Math.floor(Math.random() * max);
+  return Math.floor(Math.random() * greenCards.length);
 }
-function getNumfromGreenCards() {
-  while (newGreenCards.length != getGreenNum('shubNiggurath')) {
-    let n = getRandomInt()
-    newGreenCards.push(greenCards[n])
+export function getSortedGreenCards(user) {
+  let newGreenCards =[];
+  while (newGreenCards.length < getCardsSum(user, 'greenCards')) {
+    newGreenCards.push(greenCards[getRandomInt()])
     newGreenCards = [...new Set(newGreenCards)]
   }
   return newGreenCards
 }
-getNumfromGreenCards()
-console.log('newGreenCards', newGreenCards)
+
+
 export default greenCards;

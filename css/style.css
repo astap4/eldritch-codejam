@@ -6,7 +6,7 @@
 body {
     background: url("../assets/home.png");
 }
-.ancients_card_container {
+.ancients_card__container {
     display: flex;
     justify-content: center;
     margin-top: 2%;
@@ -22,23 +22,14 @@ body {
 .ancients_card:hover {
     box-shadow: 0 15px 20px rgb(248, 249, 249);
 }
-.ancients1 {
-    background-image: url("../assets/Ancients/Azathoth.png");
-}
-.ancients2 {
-    background-image: url("../assets/Ancients/Cthulthu.png");
-}
-.ancients3 {
-    background-image: url("../assets/Ancients/IogSothoth.png");
-}
-.ancients4 {
-    background-image: url("../assets/Ancients/ShubNiggurath.png");
-}
 .difficulty_container {
     display: flex;
     justify-content: center;
     margin-top:30px;
     gap:2%;
+}
+.difficulty_container.hidden {
+    visibility: hidden;
 }
 .difficulty_button,
 .shuffle_cards {
@@ -90,6 +81,9 @@ body {
 }
 .card-container {
     margin-top: 30px;
+}
+.card-container.hidden {
+    visibility: hidden;
 }
 .card,
 .current_card {
