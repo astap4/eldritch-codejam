@@ -1,4 +1,4 @@
-import {getBrownNum} from '../../../data/ancients.js'
+import {getCardsSum} from '../../../data/ancients.js'
 const brownCards = [
   {
     src: '../assets/MythicCards/brown/brown1.png',
@@ -64,20 +64,16 @@ const brownCards = [
     src: '../assets/MythicCards/brown/brown21.png',
     id: 'easy'},
 ]
-let newBrownCards = [];
-let max = brownCards.length;
 function getRandomInt() {
-  return Math.floor(Math.random() * max);
+  return Math.floor(Math.random() * brownCards.length);
 }
-function getNumfromBrownCards() {
-  while (newBrownCards.length != getBrownNum('shubNiggurath')) {
-    let n = getRandomInt()
-    newBrownCards.push(brownCards[n])
+export function getSortedBrownCards(user) {
+  let newBrownCards = [];
+  while (newBrownCards.length != getCardsSum(user, 'brownCards')) {
+    newBrownCards.push(brownCards[getRandomInt()])
     newBrownCards = [...new Set(newBrownCards)]
   }
   return newBrownCards
 }
-getNumfromBrownCards()
-console.log('newBrownCards', newBrownCards)
 
 export default brownCards

@@ -6,26 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eldritch</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/favicon.jpg">
 </head>
 <body>
     <header>
     </header>
     <main>
-    <div class="ancients_card_container">
-        <div class="ancients_card ancients1"></div>
-        <div class="ancients_card ancients2"></div>
-        <div class="ancients_card ancients3"></div>
-        <div class="ancients_card ancients4"></div>
+    <div class="ancients_card__container">
     </div>
-    <div class="difficulty_container">
+    <div class="difficulty_container hidden">
         <button class="difficulty_button easy">Легкая</button>
         <button class="difficulty_button normal">Средняя</button>
         <button class="difficulty_button difficult">Сложная</button>
     </div>
     <div class="shuffle_cards hidden">Замешать колоду</div>
     <div class="play_container">
-        <div class="tracker"></div>
-        <div class="card-container">
+        <div class="tracker">
+            <div class="first_stage__tracker"></div>
+            <div class="second_stage__tracker"></div>
+            <div class="third_stage__tracker"></div>
+        </div>
+        <div class="card-container hidden">
             <div class="card cards-rotate">
                 <div class="card-inner">
                 </div>

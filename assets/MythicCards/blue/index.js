@@ -1,4 +1,4 @@
-import {getBlueNum} from '../../../data/ancients.js'
+import {getCardsSum} from '../../../data/ancients.js'
 const blueCards = [
   {
     src: '../assets/MythicCards/blue/blue1.png',
@@ -37,19 +37,17 @@ const blueCards = [
     src: '../assets/MythicCards/blue/blue12.png',
     id: 'normal'}
 ]
-let newBlueCards = [];
-let max = blueCards.length;
+
 function getRandomInt() {
-  return Math.floor(Math.random() * max);
+  return Math.floor(Math.random() * blueCards.length);
 }
-function getNumfromBlueCards() {
-  while (newBlueCards.length != getBlueNum('shubNiggurath')) {
-    let n = getRandomInt()
-    newBlueCards.push(blueCards[n])
+export function getSortedBlueCards(user) {
+  let newBlueCards = [];
+  while (newBlueCards.length != getCardsSum(user, 'blueCards')) {
+    newBlueCards.push(blueCards[getRandomInt()])
     newBlueCards = [...new Set(newBlueCards)]
   }
   return newBlueCards
 }
-getNumfromBlueCards()
-console.log('newBlueCards', newBlueCards)
+
 export default blueCards

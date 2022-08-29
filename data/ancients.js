@@ -81,22 +81,23 @@ const ancientsData = [
   },
 ]
 
-export function getGreenNum(name) {
-  const user = ancientsData.find((user) => user.name === name);
-  return user.firstStage.greenCards + user.secondStage.greenCards + user.thirdStage.greenCards;
-}
-export function getBlueNum(name) {
-  const user = ancientsData.find((user) => user.name === name);
-  return user.firstStage.blueCards + user.secondStage.blueCards + user.thirdStage.blueCards;
-}
-export function getBrownNum(name) {
-  const user = ancientsData.find((user) => user.name === name);
-  return user.firstStage.brownCards + user.secondStage.brownCards + user.thirdStage.brownCards;
+const ancientsCard = document.querySelectorAll('.ancients_card');
+
+
+export function getCardsSum(user, colorCard) {
+  return user.firstStage[colorCard] + user.secondStage[colorCard] + user.thirdStage[colorCard];
 }
 
-console.log('getGreenNum', getGreenNum('shubNiggurath'));
-console.log('getBlueNum', getBlueNum('shubNiggurath'));
-console.log('getBrownNum', getBrownNum('shubNiggurath'));
+export function openDifficulties() {
+  const difficulties = document.querySelector('.difficulty_container');
+  difficulties.classList.remove('hidden')
+}
 
+export function chooseAncient() {
+  for (let i = 0; i < ancientsCard.length; i++) {
+    const btn = ancientsCard[i];
+    btn.addEventListener('click', openDifficulties)
+  }
+}
 
 export default ancientsData
